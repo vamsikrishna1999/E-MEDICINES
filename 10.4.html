@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E-Medicines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="app.min.css">
+    <style>
+			@-webkit-keyframes pulse {
+				0% {
+					background-color: #CCC;
+				}
+				25% {
+					background-color: #EEE;
+				}
+				50% {
+					background-color: #CCC;
+				}
+				75% {
+					background-color: #EEE;
+				}
+				100% {
+					background-color: #CCC;
+				}
+			}
+         fieldset {
+    _position : relative;  /* The underscore means only IE will see it */
+    _padding-top : 20px;   /* Stupid IE */
+    _padding-bottom : 15px;
+    _display : block;
+    border : 1px solid black;
+    width : 50em;
+    background-color : #DDF1F6;
+    margin-bottom : 15px;
+}
+			
+    </style>
+  </head>
+
+  <body background="one.jpeg">
+    <div class="app-page" data-page="home">
+      <div class="app-topbar blue">
+        <div class="app-title">E-Medicines</div>
+      </div>
+      <div class="app-content">
+          <p class="app-section">
+					Please enter your details below
+				</p>
+         
+          
+          <div class="app-section" id="contact-list">
+					
+				</div>
+          <div class="app-content">
+            <p class="app-section">
+                 <b>Gender</b>
+              </p>
+              <fieldset>
+               <input type="radio" name="gender" value="male" checked> Male<br>
+                 <input type="radio" name="gender" value="female"> Female<br>
+              <input type="radio" name="gender" value="other"> Other
+          </fieldset >  
+               <div class="app-content">
+             <p class="app-section">
+                 Age
+                   </p>
+              <fieldset>
+             Enter age:<input type="number" value="">
+                    
+             weight:<input type="number" value=""> 
+              </fieldset>
+                
+        <div class="app-content">
+            <p class="app-section">
+                 Any previous history with :
+            </p>
+            <fieldset>
+         <input type="checkbox"  value="">Diabetes<br>
+         <input type="checkbox"  value="">Thyroid<br>
+         <input type="checkbox"  value="">High BloodPressure<br>
+              </fieldset>
+        
+        
+    
+                <div class="app-content">
+            <p class="app-section">
+                Please enter your symptoms below:
+                    </p>
+                <fieldset>
+  <input type="checkbox"  id="check1"   onclick="myFunction()">Nausea<br>
+  <input type="checkbox"  id="check2"   onclick="myFunction()">Flu<br>
+  <input type="checkbox"  id="check3"   onclick="myFunction()">Stomach ache<br>
+  <input type="checkbox"  id="check4"   onclick="myFunction()">Diarrhea<br> 
+                    </fieldset>
+                    <hr>
+                    <fieldset>
+      <p id="text" style="display:none">Medicines recommended for Nausea :<br>Vomistop-59rs/10tablets<br>Dompersidone-30rs/10tablets<br>A30 vomiting drops-75rs(age:5-10yrs)<br>Pantodac-150rs/15tablets</p> <br> <hr>
+                    
+            <p id="text1" style="display:none">Medicines recommended for Flu:<br>Alchem life Phytorelief- 209rs/10tablets<br>VicksVaporub-67s(age:5-10yrs)<br>Himalaya Septilin - 175rs<br>D cold Total-16rs/6tablets</p> <br> <hr>         
+            <p id="text2" style="display:none">Medicines recommended for Stomach Ache<br>Colinol-33rs/10tablets<br>Cyclopalm - 43rs/10tablets<br>Gelusil - 95rs(syrup)<br>Woodwards gripe water - 55rs(age:infants)</p><br> <hr>
+                    
+        <p id="text3" style="display:none">Medicines recommended for Diarrhea:<br>ORS L-33rs/200ml<br>Eldoper-24rs/10tablets<br>Sporlac DS- 89rs/20tablets(age:4-8yrs)<br>ElectralPowder-18rs</p> 
+                 </fieldset>
+                    <font size="+2"> If you think your symptoms are severe and you you want to contact a doctor you can choose from our doctors on board::<p>
+    </font>
+      <font size="+1"><a href="file:///C:/Users/vamsi/Desktop/doctorlist.html"> Orthopaedic</a></font></br>
+      <font size="+1"><a href="file:///C:/Users/vamsi/Desktop/doctorlist.html"> Pediatrician</a></font></br>
+      <font size="+1"><a href="file:///C:/Users/vamsi/Desktop/doctorlist.html"> Physiotherapist</a></font></br>
+        <font size="+1"><a href="file:///C:/Users/vamsi/Desktop/doctorlist.html">Dermatology</a></font></br>
+     <script>
+function myFunction() {
+    var checkBox = document.getElementById("check1");
+    var checkBox1 = document.getElementById("check2");
+    var checkBox2 = document.getElementById("check3");
+    var checkBox3 = document.getElementById("check4");
+    var text = document.getElementById("text");
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var text3 = document.getElementById("text3");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    }
+     else{
+       text.style.display = "none";
+     }
+    if(checkBox1.checked == true)
+        {
+            text1.style.display = "block";
+        }
+     else{
+       text1.style.display = "none";
+     }
+       if(checkBox2.checked == true)
+          {
+               text2.style.display = "block";
+          }
+     else{
+       text2.style.display = "none";
+     }
+     if(checkBox3.checked == true)
+        {
+             text3.style.display = "block";
+        }
+   else{
+       text3.style.display = "none";
+   }
+    }
+
+</script>
+          
+        <div class="app-section">
+          <div class="app-button" id="new-user">Email to respective doctor</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="app-page" data-page="sendemail">
+			<div class="app-topbar">
+				<div class="app-title"><span class="app-icon"></span>Send Email</div>
+				<div class="right app-button" data-back>Done</div>
+			</div>
+
+			<div class="app-content">
+                
+                <div class="app-section" id="message">
+					
+				</div>
+
+				<div class="app-section">
+					From: <input class="app-input" id="sender-email" placeholder="Sender Email Address">
+				</div>
+                
+                <div class="app-section">
+					To: <input class="app-input" id="recipient-email" placeholder="Recipient Email Address">
+				</div>
+
+				<form class="app-section">
+					<input class="app-input" name="subject" placeholder="Subject" id="subject">
+					<textarea class="app-input" name="message" placeholder="Message" id="content"></textarea>
+					<div class="app-button green app-submit" id="send-button">Send</div>
+				</form>
+			</div>
+		</div>
+
+    <script src="zepto.js"></script>
+    <script src="app.min.js"></script>
+    <script>
+        
+      App.controller('home', function (page) {
+    
+          if (typeof localStorage !== 'undefined') {
+              
+              $(page).find("#new-user")
+                .clickable()
+                .click(function () {
+                  
+                  if (localStorage.getItem("recipient-email") !== null) {
+                  
+                      localStorage.removeItem("recipient-email");
+                      
+                      
+                  }
+                  
+                  App.load("sendemail");
+                  
+              })
+              
+              if (localStorage.getItem("recipient-list") !== null) {
+                  
+                  var recipientList = JSON.parse(localStorage.getItem("recipient-list"));
+                  
+                  $.each(recipientList, function( index, value ) {
+                    
+                      $(page).find("#contact-list").append('<div class="app-button redirect">' + value + '</div>');
+                
+                  });
+                  
+                  $(page).find("#contact-list").show();
+                  
+                  $(page).find(".redirect")
+                      .clickable()
+                      .on("click", function() {
+                      
+                      localStorage.setItem("recipient-email", $(this).html());
+                      
+                      App.load('sendemail');
+                      
+                      
+                      
+                  });
+                  
+                  
+              } else {
+                  
+                  $(page).find("#contact-list").hide();
+                  
+              }
+              
+              
+          }
+          
+      });
+        
+        App.controller('sendemail', function (page) {
+            
+            $(page).find("#message").hide();
+            
+            if (typeof localStorage !== 'undefined') {
+                
+                if (localStorage.getItem("sender-email") !== null) {
+                    
+                    
+                    $(page).find("#sender-email").val(localStorage.getItem("sender-email"));
+                    
+                }
+                
+                if (localStorage.getItem("recipient-email") !== null) {
+                    
+                    $(page).find("#recipient-email").val(localStorage.getItem("recipient-email"));
+                    
+                }
+                
+            }
+            
+            
+            
+          $(page).find('#send-button')
+					.clickable()
+					.on('click', function () {
+              
+                 $.ajax({
+  type: 'GET',
+  url: 'http://completewebdevelopercourse.com/content/9-mobileapps/sendemail.php?callback=response',
+  // data to be added to query string:
+  data: { to: $("#recipient-email").val(), from: $("#sender-email").val(), subject: $("#subject").val(), content: $("#content").val()},
+  // type of data we are expecting in return:
+  dataType: 'jsonp',
+  timeout: 300,
+  context: $('body'),
+  success: function(data){
+    
+      if (data.success == true) {
+          
+          $(page).find("#message").html("Your email was sent successfully!").show();
+          
+      } else {
+          
+          $(page).find("#message").html("Your email could not be sent - please try again later.").show();
+          
+      }
+      
+      
+  },
+  error: function(xhr, type){
+    
+        $(page).find("#message").html("Your email could not be sent - please try again later.").show();     
+      
+  }
+})
+    
+              
+              if (typeof localStorage !== 'undefined') {
+                  
+                  localStorage.setItem("sender-email", $("#sender-email").val());
+                  
+                  var recipientList = new Array();
+                  
+                  if (localStorage.getItem("recipient-list") !== null) {
+                      
+                      recipientList = JSON.parse(localStorage.getItem("recipient-list"));
+                      
+                  }
+                  
+                  if ($.inArray($("#recipient-email").val(), recipientList) == -1) {
+                      
+                      recipientList.push($("#recipient-email").val());
+                      
+                      recipientList.sort();
+                      
+                      localStorage.setItem("recipient-list", JSON.stringify(recipientList));
+                      
+                      console.log(recipientList);
+                      
+                  }
+                  
+              } else {
+                  
+                  // alert user that we couldn't save data
+                  
+              }
+              
+              
+          });
+      });
+        
+       
+
+      try {
+        App.restore();
+      } catch (err) {
+        App.load('home');
+      }
+    </script>
+  </body>
+</html>
